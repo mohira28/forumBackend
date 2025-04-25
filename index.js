@@ -52,7 +52,9 @@ app.patch(
     handleValidationErrors, 
     PostController.update
     )
-
+app.get('/', (req, res) => {
+  res.send('Бекенд работает! 🚀');
+});
 app.post('/comments', checkAuth, handleValidationErrors, CommentController.createComment)
 app.get('/comments',  handleValidationErrors, CommentController.getComment)
 
